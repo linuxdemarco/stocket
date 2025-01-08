@@ -8,7 +8,8 @@ To get started make sure you have installed Python package dependencies (will ge
 
 `python ./server.py [optional APP_ENV={PROD|DEV}]` will open a socket at `SERVER:PORT` and listen for incoming connection requests. The server script is non-interactable.
 
-It serves data from a `stock_prices` dictionary that updates the stock prices (values) at its symbols (keys) randomly in an `update_stock_prices` thread.
+It serves data from a `stock_prices` dictionary that updates the stock prices (values) at its symbols (keys) randomly in an `update_stock_prices` thread. The main thread accepts new client connections and assigns each connection
+a new thread responsible for managing the client's user data.
 
 `python ./client.py [optional APP_ENV={PROD|DEV}]` connects to the server sockets and--once connected--initiates a command line input session with the user.
 
