@@ -1,13 +1,5 @@
 import socket
-import configparser
-
-# Read server configuration from the config file
-config = configparser.ConfigParser()
-config.read("config.ini")
-
-# Server settings from the config file
-SERVER = config["server"]["host"]
-PORT = int(config["server"]["port"])
+from config import SERVER, PORT, DEBUG
 
 # Function to display the UI
 def show_menu():

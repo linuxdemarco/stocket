@@ -2,15 +2,7 @@ import socket
 import threading
 import random
 import time
-import configparser
-
-# Read server configuration from the config file
-config = configparser.ConfigParser()
-config.read("config.ini")
-
-# Server settings from the config file
-SERVER = config["server"]["host"]
-PORT = int(config["server"]["port"])
+from config import SERVER, PORT, DEBUG
 
 # Dictionary to hold stock prices
 stock_prices = {
