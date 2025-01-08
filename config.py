@@ -7,5 +7,5 @@ else: # APP_ENV == "DEV"
     load_dotenv(".env.dev")
 
 SERVER = os.getenv("SERVER")
-PORT = os.getenv("PORT")
-DEBUG = os.getenv("DEBUG")
+PORT = int(os.getenv("PORT"))
+DEBUG = bool(os.getenv("DEBUG"))
